@@ -55,7 +55,7 @@
 
 
 				 $("#fot").owlCarousel({
-    					jsonPath : "/static/js/data.json",
+    					jsonPath : "data.json",
 					navigation : true,
 					pagination:false 
   				 });

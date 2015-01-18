@@ -1,0 +1,36 @@
+#header{
+    /*Novamente definimos a largura da div*/
+    width:100%;
+    /* altura da div */
+    height:20%;
+    /* Cor de fundo da div */
+    background-color:#CC6666;
+    }
+#conteudo{
+    /*Novamente definimos a largura da div*/
+    width:70%;
+    /* altura da div */
+    height:60%;
+    /* Cor de fundo da div */
+    background-color:#0F0; 
+    float:right;
+}
+#conteudo2{
+    /*Novamente definimos a largura da div*/
+    width:30%;
+    /* altura da div */
+    height:60%;
+    /* Cor de fundo da div */
+    background-color:#0F0;
+    float:left;
+}  
+#footer{
+    /*Novamente definimos a largura da div*/
+    width:100%;
+    /* altura da div */
+    height:20%;
+    /* Cor de fundo da div */
+    background-color:#CC9966;
+    }
+
+
