@@ -41,35 +41,50 @@
 
 		
 		<script>
+
                        $(document).ready(function() {
+
+                                var owl = $("#owl-demo");
  
- 				 $("#owl-demo").owlCarousel({
+ 
+ 				 owl.owlCarousel({
 					 jsonPath : "/static/js/data.json", 
      					 navigation : true, // Show next and prev buttons
       					 slideSpeed : 300,
   				         paginationSpeed : 400,
       					 singleItem:true,
-					 pagination:false
+					 pagination:false,
+					 afterMove: true
  
   				 });
 
 
+
 				 $("#fot").owlCarousel({
-    					jsonPath : "data.json",
+    					jsonPath : "/static/js/data.json",
 					navigation : true,
 					pagination:false 
   				 });
-				
 
-				 $(".owl-next").click(function(){
-				    console.log('next event');
-  				 })
+                                  
+ 					$("#nx").click(function(){
+				    		console.log('next event');
+						owl.trigger('owl.next');
+  				 	})
 					
 
-			          $(".owl-prev").click(function(){
-				    console.log('prev event');
-  				 }) 
+			          	$(".owl-prev").click(function(){
+				    		console.log('prev event');
+  				 	}) 
+ 
+				 
+				
+
+				
 			});
+
+
+
 			
 			
 
@@ -106,9 +121,9 @@
                 <div id="site">
                 <div id="header"></div>
 		<div id="conteudo2">
-			<div id="owl-demo" class="owl-carousel owl-theme">
- 
+			<div id="owl-demo" class="owl-carousel owl-theme">     
 			</div>
+                        <div> <button id="nx" type="button">Click Me!</button> </div>
                 </div>
                 <div id="conteudo">
                       <div id="map-canvas"></div>
