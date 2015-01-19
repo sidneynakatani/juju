@@ -48,7 +48,8 @@
  
  
  				 owl.owlCarousel({
-					 jsonPath : "/static/js/data.json", 
+					 jsonPath : "/static/js/datas.json", 
+					 jsonSuccess : customDataSuccess,
      					 slideSpeed : 300,
   				         paginationSpeed : 400,
       					 singleItem:true,
@@ -65,19 +66,34 @@
   				 });
 
                                   
- 					$("#nx").click(function(){
-				    		console.log('next event');
-						owl.trigger('owl.next');
-  				 	})
+ 		 		 $("#nx").click(function(){
+				    	console.log('next event');
+					owl.trigger('owl.next');
+  				 })
 					
 
-			          	$("#pv").click(function(){
-				    		console.log('prev event');
-						owl.trigger('owl.prev');
-  				 	})
+			         $("#pv").click(function(){
+				    	console.log('prev event');
+					owl.trigger('owl.prev');
+  				 })
  
 				 
-				
+				function customDataSuccess(data){
+					for(var i in data["items"]){
+					
+					var div = document.createElement('div');
+                     		        var text = document.createTextNode(data["items"][i].alt);
+					var img = document.createElement('img');
+                                        img.src = data["items"][i].img;
+                                        img.setAttribute('width', '25%');
+                                        img.setAttribute('height', '30%');
+
+					div.appendChild(img);
+                                        div.appendChild(text);
+					$(".teste").append(div);
+					}
+		
+				}
 
 				
 			});
@@ -120,9 +136,10 @@
                 <div id="site">
                 <div id="header"></div>
 		<div id="conteudo2">
-			<div id="owl-demo" class="owl-carousel owl-theme">     
-			</div>
                         <div> <button id="pv" type="button"><</button> </div>
+			<div id="owl-demo" class="teste">     
+			</div>
+                        
                         <div> <button id="nx" type="button">></button> </div>
                 </div>
                 <div id="conteudo">

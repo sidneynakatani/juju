@@ -1,0 +1,30 @@
+{
+    "items" : [
+    {
+    "img": "/static/img/cat.png",
+    "alt" : "Owl Image 1"
+    },
+    {
+    "img": "/static/img/cat.png",
+    "alt" : "Owl Image 2"
+    },
+    {
+    "img": "/static/img/cat.png",
+    "alt" : "Owl Image 3"
+    },
+    {
+    "img": "/static/img/cat.png",
+    "alt" : "Owl Image 4"
+    },
+    {
+    "img": "/static/img/cat.png",
+    "alt" : "Owl Image 5"
+    },
+    {
+    "img": "/static/img/cat.png",
+    "alt" : "Owl Image 6"
+    }
+    ]
+}
+
+

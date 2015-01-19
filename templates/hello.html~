@@ -49,12 +49,10 @@
  
  				 owl.owlCarousel({
 					 jsonPath : "/static/js/data.json", 
-     					 navigation : true, // Show next and prev buttons
-      					 slideSpeed : 300,
+     					 slideSpeed : 300,
   				         paginationSpeed : 400,
       					 singleItem:true,
-					 pagination:false,
-					 afterMove: true
+					 pagination:false
  
   				 });
 
@@ -73,9 +71,10 @@
   				 	})
 					
 
-			          	$(".owl-prev").click(function(){
+			          	$("#pv").click(function(){
 				    		console.log('prev event');
-  				 	}) 
+						owl.trigger('owl.prev');
+  				 	})
  
 				 
 				
@@ -123,7 +122,8 @@
 		<div id="conteudo2">
 			<div id="owl-demo" class="owl-carousel owl-theme">     
 			</div>
-                        <div> <button id="nx" type="button">Click Me!</button> </div>
+                        <div> <button id="pv" type="button"><</button> </div>
+                        <div> <button id="nx" type="button">></button> </div>
                 </div>
                 <div id="conteudo">
                       <div id="map-canvas"></div>
