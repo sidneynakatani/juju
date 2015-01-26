@@ -25,6 +25,7 @@
         		 padding: 0px
      			 }
 
+
 			#fot .item{
 			  background: #a1def8;
   			  padding: 30px 0px;
@@ -43,9 +44,8 @@
 		<script>
 
                        $(document).ready(function() {
-
+				var data = null;
                                 var owl = $("#owl-demo");
- 
  
  				 owl.owlCarousel({
 					 jsonPath : "/static/js/datas.json", 
@@ -77,31 +77,14 @@
 					owl.trigger('owl.prev');
   				 })
  
-				 
-				function customDataSuccess(data){
-					for(var i in data["items"]){
-					
-					var div = document.createElement('div');
-                     		        var text = document.createTextNode(data["items"][i].alt);
-					var img = document.createElement('img');
-                                        img.src = data["items"][i].img;
-                                        img.setAttribute('width', '25%');
-                                        img.setAttribute('height', '30%');
-
-					div.appendChild(img);
-                                        div.appendChild(text);
-					$(".teste").append(div);
-					}
-		
-				}
-
+				customDataSuccess(data);
 				
 			});
 
 
 
 			
-			
+		
 
                        var list = new Array();
                        var map;

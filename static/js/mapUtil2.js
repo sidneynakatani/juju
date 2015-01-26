@@ -62,13 +62,13 @@ function createTable(list, map){
 					var divText = document.createElement('div');
 					divText.appendChild(cellText);
 
-					//divItem.appendChild(divImg);
-					//divItem.appendChild(divText);
+					divItem.appendChild(divImg);
+					divItem.appendChild(divText);
 
-					var h = document.createElement("H1")            
-					var t = document.createTextNode(j);
-					h.appendChild(t);
-					divItem.appendChild(h);
+					//var h = document.createElement("H1")            
+					//var t = document.createTextNode(j);
+					//h.appendChild(t);
+					//divItem.appendChild(h);
 
 					divMain.appendChild(divItem);
 
@@ -99,5 +99,38 @@ function focus(position, isVisible, map){
                             }
                         }
 
+/*
+ Function to create side carousel 
+*/
+function customDataSuccess(data){
+          
+	 if(data){                             
+
+		for(var i in data["items"]){
+                                        
+                      var div = document.createElement('div');
+                      var text = document.createTextNode(data["items"][i].alt);
+                      var img = document.createElement('img');
+		      var divImg = document.createElement('div');
+                      var divText = document.createElement('div');
+
+                      img.src = data["items"][i].img;
+                      img.setAttribute('width', '45%');
+                      img.setAttribute('height', '60%');
+
+                      divImg.appendChild(img);
+                      divText.appendChild(text);
+
+                      div.appendChild(divText);
+                      div.appendChild(divImg);
+		      div.setAttribute("align", "center");
+		      div.setAttribute("id", i);
+		      div.addEventListener("click", function() {
+                                                focus(this.id, true, map);
+		        });
+		      $(".teste").append(div);
+                 }
+          }      
+}
 
 
