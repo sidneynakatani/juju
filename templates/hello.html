@@ -44,10 +44,12 @@
 		<script>
 
                        $(document).ready(function() {
+			
+			
 				var data = null;
                                 var owl = $("#owl-demo");
- 
- 				 owl.owlCarousel({
+ 				 
+				owl.owlCarousel({
 					 jsonPath : "/static/js/datas.json", 
 					 jsonSuccess : customDataSuccess,
      					 slideSpeed : 300,
@@ -76,6 +78,12 @@
 				    	console.log('prev event');
 					owl.trigger('owl.prev');
   				 })
+					
+				$("#go").click(function(){
+					var to = $('#go2').val();
+					console.log('go to: '+to);
+				        owl.trigger('owl.goTo', to);                                
+                                 })
  
 				customDataSuccess(data);
 				
@@ -124,6 +132,10 @@
 			</div>
                         
                         <div> <button id="nx" type="button">></button> </div>
+			<div> 
+			     <input  id="go2" type="text" size="1"/> 
+			     <button id="go" type="button">go</button> 
+			</div>
                 </div>
                 <div id="conteudo">
                       <div id="map-canvas"></div>
