@@ -28,7 +28,7 @@
 
 			#fot .item{
 			  background: #a1def8;
-  			  padding: 30px 0px;
+  			  padding: 20px 0px;
 			  display: block;
 			  margin: 5px;
 			  color: #FFF;
@@ -45,10 +45,11 @@
 
                        $(document).ready(function() {
 			
-			
+
 				var data = null;
                                 var owl = $("#owl-demo");
- 				 
+ 				var f = $("#fot");
+ 
 				owl.owlCarousel({
 					 jsonPath : "/static/js/datas.json", 
 					 jsonSuccess : customDataSuccess,
@@ -59,9 +60,9 @@
  
   				 });
 
-
-
-				 $("#fot").owlCarousel({
+  
+                                 f.owlCarousel({
+				// $("#fot").owlCarousel({
     					jsonPath : "/static/js/data.json",
 					navigation : true,
 					pagination:false 
@@ -71,28 +72,32 @@
  		 		 $("#nx").click(function(){
 				    	console.log('next event');
 					owl.trigger('owl.next');
-  				 })
+  				 });
 					
 
 			         $("#pv").click(function(){
 				    	console.log('prev event');
 					owl.trigger('owl.prev');
-  				 })
+  				 });
 					
 				$("#go").click(function(){
 					var to = $('#go2').val();
 					console.log('go to: '+to);
 				        owl.trigger('owl.goTo', to);                                
-                                 })
+                                 });
  
+				
+				 $("#g").click(function(){
+					var t1 = $('#g1').val();
+                         		t1 = t1-1;
+                         		$("#fot").trigger('owl.goTo',t1); 
+                                 });
+
 				customDataSuccess(data);
 				
 			});
+                      
 
-
-
-			
-		
 
                        var list = new Array();
                        var map;
@@ -136,12 +141,17 @@
 			     <input  id="go2" type="text" size="1"/> 
 			     <button id="go" type="button">go</button> 
 			</div>
+			  <div>
+			     <input  id="g1" type="text" size="1"/>
+                             <button id="g" type="button">go</button>
+                        </div>
+
                 </div>
                 <div id="conteudo">
                       <div id="map-canvas"></div>
                 </div>
                 <div id="footer">
-.    			<div id="fot" class="owl-carousel owl-theme"></div>
+.    	                 <div id="fot" class="owl-carousel owl-theme"></div>
     		</div>
 
 
