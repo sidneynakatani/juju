@@ -108,7 +108,7 @@
                             var mapOptions = {zoom: 10,center: new google.maps.LatLng(-33.9, 151.2)}
 			    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 			    setMarkers(map, beaches, list);
-                            createTable(list, map);
+                       	    //createTable(list, map);
                         }
 
 
@@ -132,20 +132,20 @@
                 <div id="site">
                 <div id="header"></div>
 		<div id="conteudo2">
-                        <div> <button id="pv" type="button"><</button> </div>
-			<div id="owl-demo" class="teste">     
-			</div>
+			
+			<img id="pv" src="/static/img/picturepanel-left.png" > </img>
+			<img id="nx" src="/static/img/picturepanel-right.png" align="right"> </img>
+			<div id="owl-demo" class="teste"></div>
                         
-                        <div> <button id="nx" type="button">></button> </div>
+			
 			<div> 
 			     <input  id="go2" type="text" size="1"/> 
 			     <button id="go" type="button">go</button> 
 			</div>
-			  <div>
+		        <div>
 			     <input  id="g1" type="text" size="1"/>
                              <button id="g" type="button">go</button>
                         </div>
-
                 </div>
                 <div id="conteudo">
                       <div id="map-canvas"></div>
